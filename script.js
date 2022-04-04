@@ -1,17 +1,16 @@
-let toDoInput; //miejsce gdzie użytkownik wpisuje treść zadania
-let errorInfo; //info o braku zadań/koniecznosci wpisania tekstu
-let addBtn; // przycisk ADD - dodaje nowe elementy do listy
-let ulList; // lista zadań, tagi UL
-let newTodo; // nowe zadanie, nowo dodany LI
+let toDoInput;
+let errorInfo;
+let addBtn;
+let ulList;
+let newTodo;
 // popupy
-let popup; // popup
-let popupInfo; // tekst w popup jak dodamy pustą linijke
-let todoToEdit; // edytopwany toDo
-let popupInput; // inpup w srodku popupa
-let popupAddBtn; // przycisk 'zatwierdź'
-let popupCloseBtn; // przycisk anuluj w popupie
+let popup;
+let popupInfo;
+let todoToEdit;
+let popupInput;
+let popupAddBtn;
+let popupCloseBtn;
 
-// further=================================================================================
 const main = () => {
 	prepareDOMElements();
 	prepareDOMEvents();
@@ -56,7 +55,6 @@ const addNewTodo = () => {
 };
 
 const createToolsArea = () => {
-	//TWORZENIE NOWEGO ELEMENTU NA LIŚĆIE -> dodawanie klas
 	const toolsPanel = document.createElement(`div`);
 	toolsPanel.classList.add(`tools`);
 	newTodo.append(toolsPanel);
@@ -76,7 +74,6 @@ const createToolsArea = () => {
 	toolsPanel.append(completeBtn, editBtn, deleteBtn);
 };
 
-// checkClick z eventem
 const checkClick = e => {
 	if (e.target.matches(`.complete`)) {
 		e.target.closest(`li`).classList.toggle(`completed`);
@@ -128,6 +125,5 @@ const enterKeyCheck = e => {
 };
 
 // ===LISTENERY===
-// ===LISTENERY===
-// ===LISTENERY===
+
 document.addEventListener(`DOMContentLoaded`, main);
